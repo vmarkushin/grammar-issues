@@ -1,0 +1,14 @@
+[package]
+name = "grammar-issues"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+lalrpop-util = { version = "0.19.6", features = ["lexer"] }
+pest = "2.1.3"
+pest_derive = "2.1"
+
+[build-dependencies]
+lalrpop = "0.19.6"
+

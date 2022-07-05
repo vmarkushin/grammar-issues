@@ -1,0 +1,14 @@
+ident = @{ ASCII_ALPHA }
+
+prim_expr =
+ { ident
+ | "(" ~ expr ~ ")"
+ }
+
+app_expr = { prim_expr ~ prim_expr* }
+
+param = { "(" ~ ident+ ~ ":" ~ expr ~ ")" }
+
+pi_expr = { param* ~ app_expr }
+
+expr = { pi_expr }

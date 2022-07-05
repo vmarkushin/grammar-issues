@@ -1,0 +1,16 @@
+grammar;
+
+ident : () = <s: r"\w"> => panic!();
+
+prim_expr : () = {
+    ident => panic!(),
+    "(" expr ")",
+};
+
+app_expr : () = prim_expr prim_expr* => panic!();
+
+param : () = "(" ident+ ":" expr ")";
+
+pi_expr : () = param* app_expr => panic!();
+
+pub expr : () = pi_expr;
